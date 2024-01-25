@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
-}
+body{background:#babbbd;width:100%;min-height:100vh;margin:0;font-family:sans-serif}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.loading{display:flex;justify-content: center;align-items: center;width:100vw;height:100vh}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.main{width:100%;min-height:100vh;display:flex;justify-content: center;align-items: center;padding:20px;box-sizing: border-box;}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.center{max-width:800px;width:100%;box-sizing: border-box;display:flex;flex-direction: column;gap:20px;margin-top:20vh}
+.center .addTask{background:#fffb;border-radius: 3px;padding:20px;box-shadow: 1px 1px 10px #0004;}
+.center .list{background:#fffb;border-radius: 3px;box-shadow: 1px 1px 10px #0004;}
 
-.App-link {
-  color: #61dafb;
-}
+.taskform{display:grid;grid-auto-columns: 2;gap:10px;padding:10px 0}
+.taskform *:nth-child(2n){grid-column:2}
+.taskform *:nth-child(n+5){grid-column-start:1;grid-column-end: 3;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.center .list .collapsable{display:Grid;gap:4px}
+.center .list .collapsable div{background:#5551;padding:8px};
+.center .list .collapsable .due_date{grid-column: 2;}
+.center .list .collapsable .notes{grid-column: 2;}
+.center .list .buttons{display:flex;padding:20px;gap:20px;justify-content: flex-end;}
+
+@media only screen and (max-width: 600px){
+    .main{padding:0}
+    .center .list .collapsable .due_date{grid-column: 1;}
+    .center .list .collapsable .notes{grid-column: 1;}
 }
